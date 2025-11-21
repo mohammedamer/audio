@@ -8,4 +8,5 @@ dependencies = [
     "jupyterlab>=4.5.0",
     "moviepy<2",
     "numpy>=2.3.5",
+    "pillow>=11.3.0",
 ]

@@ -120,6 +120,7 @@ dependencies = [
     { name = "jupyterlab" },
     { name = "moviepy" },
     { name = "numpy" },
+    { name = "pillow" },
 ]
 
 [package.metadata]
@@ -127,6 +128,7 @@ requires-dist = [
     { name = "jupyterlab", specifier = ">=4.5.0" },
     { name = "moviepy", specifier = "<2" },
     { name = "numpy", specifier = ">=2.3.5" },
+    { name = "pillow", specifier = ">=11.3.0" },
 ]
 
 [[package]]
