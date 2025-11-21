@@ -1,0 +1,1 @@
+podman compose -f compose.jupyter.yml down
