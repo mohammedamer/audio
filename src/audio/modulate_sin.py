@@ -21,11 +21,10 @@ def modulate_sin(audio_path, image_path, video_output,
     if blur:
         base_img = base_img.filter(ImageFilter.GaussianBlur())
 
-    height, width = np.array(base_img).shape[0:2]
-    dpi = 100
+    height, width, channels = np.array(base_img).shape
 
     fig = plt.figure()
-    fig = plt.figure(figsize=(width / dpi, height / dpi), dpi=dpi)
+    fig = plt.figure(figsize=(width, height))
     ax = fig.add_axes([0, 0, 1, 1])
 
     omega = 100/duration
@@ -60,7 +59,7 @@ def modulate_sin(audio_path, image_path, video_output,
         # RGBA buffer as (H, W, 4)
         buf = np.frombuffer(fig.canvas.buffer_rgba(), dtype=np.uint8)
         w, h = fig.canvas.get_width_height()
-        frame = buf.reshape(h, w, 4)[..., :3]
+        frame = buf.reshape(h, w, channels)[..., :3]
 
         return frame
 

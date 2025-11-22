@@ -11,6 +11,8 @@ ehthumbs.db
 **/.ipynb_checkpoints
 **/__marimo__
 **/.Trash-0
+**/*.egg-info
+**/__pycache__
 
 beautiful-jekyll-theme-*.gem
 
