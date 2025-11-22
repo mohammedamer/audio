@@ -4,42 +4,10 @@ import numpy as np
 from moviepy.editor import AudioFileClip, VideoClip
 from PIL import Image
 
-
-def load_audio(path):
-
-    # Load the audio
-    audio_clip = AudioFileClip(path)
-
-    # Convert audio to a numpy array (mono)
-    # fps here is only for analysis, not video fps
-    analysis_fps = 44100
-
-    # Manually collect chunks into a list, then concatenate
-    chunks = list(
-        audio_clip.iter_chunks(
-            fps=analysis_fps,
-            quantize=True,  # get int16-ish PCM
-            nbytes=2,
-            chunksize=1024
-        )
-    )
-
-    return np.concatenate(chunks, axis=0).astype(np.float32)
+from utils import load_audio, normalize
 
 
-def normalize(audio_array):
-    # Convert to mono if stereo
-    if audio_array.ndim == 2:
-        mono = audio_array.mean(axis=1)
-    else:
-        mono = audio_array
-
-    min = mono.min()
-    max = mono.max()
-    return (mono - min)/(max - min + 1e-7)
-
-
-def main(audio_path, image_path, video_output, fps=30):
+def intensity_viz(audio_path, image_path, video_output, fps=30):
 
     audio_clip = AudioFileClip(audio_path)
     duration = audio_clip.duration
@@ -85,5 +53,5 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
-    main(audio_path=args.audio, image_path=args.image,
-         video_output=args.output)
+    intensity_viz(audio_path=args.audio, image_path=args.image,
+                  video_output=args.output)
