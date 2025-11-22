@@ -19,7 +19,7 @@ def wave_viz(audio_path, image_path, video_output,
 
     base_img = Image.open(image_path)
     if blur:
-        base_img = base_img.filter(ImageFilter.BLUR)
+        base_img = base_img.filter(ImageFilter.GaussianBlur())
 
     height, width = np.array(base_img).shape[0:2]
     dpi = 100
