@@ -1,0 +1,24 @@
+Metadata-Version: 2.4
+Name: audio
+Version: 0.1.0
+Summary: Add your description here
+Requires-Python: >=3.12
+Description-Content-Type: text/markdown
+Requires-Dist: jupyterlab>=4.5.0
+Requires-Dist: matplotlib>=3.10.7
+Requires-Dist: moviepy<2
+Requires-Dist: numpy>=2.3.5
+Requires-Dist: pillow>=11.3.0
+
+# Visulaize Audio
+
+## Install
+
+```bash
+git clone git@github.com:mohammedamer/audio.git
+cd audio
+
+uv sync --frozen
+uv pip install .
+
+```

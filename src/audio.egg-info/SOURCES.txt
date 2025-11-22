@@ -1,0 +1,12 @@
+README.md
+pyproject.toml
+src/audio/__init__.py
+src/audio/intensity.py
+src/audio/modulate_sin.py
+src/audio/utils.py
+src/audio/wave_form.py
+src/audio.egg-info/PKG-INFO
+src/audio.egg-info/SOURCES.txt
+src/audio.egg-info/dependency_links.txt
+src/audio.egg-info/requires.txt
+src/audio.egg-info/top_level.txt
