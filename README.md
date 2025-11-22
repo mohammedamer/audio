@@ -14,4 +14,6 @@ uv sync --frozen
 uv run src/audio/modulate_sin.py -h
 ```
 
-![](video/sample.mp4)
+<video width="1000" height="667" controls>
+  <source src="video/sample.mp4" type="video/mp4">
+</video>
