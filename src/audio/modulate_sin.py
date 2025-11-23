@@ -83,8 +83,9 @@ if __name__ == "__main__":
     parser.add_argument("--audio", type=str)
     parser.add_argument("--image", type=str)
     parser.add_argument("--output", type=str)
+    parser.add_argument("--color", type=str, default="black")
 
     args = parser.parse_args()
 
     modulate_sin(audio_path=args.audio, image_path=args.image,
-                 video_output=args.output)
+                 video_output=args.output, wave_color=args.color)
